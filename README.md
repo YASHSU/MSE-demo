@@ -1,9 +1,9 @@
 ```markdown
-# MSE Demo
+#MSE Demo
 
 A web application that allows users to upload an image, select two points on it, and display the distance between those points in pixels.
 
-## Features
+##Features
 
 1.  **Image Upload:** Users can upload image files (e.g., PNG, JPG, JPEG).
 2.  **Image Display:** The uploaded image is displayed on the web page.
