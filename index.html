@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>MSE</h1>
+
+    <input type="file" id="imageUpload" accept="image/*">
+
+    <div class="image-container">
+        <img id="uploadedImage" style="display: none;">
+        <canvas id="imageCanvas" style="position: absolute; top: 0; left: 0;"></canvas>
+    </div>
+
+    <div id="distanceDisplay"></div>
+    <button id="resetButton">Reset</button>
+
+    <div class="footer">Created by Suyash Chandrakar</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
