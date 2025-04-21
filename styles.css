@@ -3,38 +3,143 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f0f4f8; /* Light background color */
+    animation: fadeInBackground 2s ease forwards;
+    padding-bottom: 70px; /* Add padding at the bottom for the footer */
+    min-height: 100vh;
+    position: relative;
 }
+
+@keyframes fadeInBackground {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: #f0f4f8;
+    }
+}
+
+
+h1 {
+    color: #2c3e50; /* Darker heading color */
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out, pulse 2s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.04);
+    }
+}
+
 
 .image-container {
     position: relative;
     margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-radius: 8px;
+    overflow: hidden; /* Clip any overflow from the image or canvas */
+    transition: transform 0.2s ease-in-out;
 }
+
+.image-container:hover {
+    transform: scale(1.02);
+}
+
 
 #uploadedImage {
     max-width: 500px;
     max-height: 500px;
-    border: 1px solid #ccc;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: none;
 }
 
 #imageCanvas {
     max-width: 500px;
     max-height: 500px;
     cursor: crosshair;
+    border-radius: 8px;
 }
 
 #distanceDisplay {
     margin-top: 15px;
     font-weight: bold;
+    color: #3498db; /* Blue color for distance */
+    font-size: 1.2em;
+    animation: fadeIn 1s ease-in-out;
 }
+
 
 #resetButton {
     margin-top: 10px;
-    padding: 8px 15px;
+    padding: 10px 20px;
     cursor: pointer;
+    background-color: #ff6b6b; /* Reddish button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+#resetButton:hover {
+    background-color: #ff4757; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+#resetButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 
 .footer {
     margin-top: 20px;
-    font-size: 0.8em;
-    color: #777;
+    font-size: 0.9em;
+    color: #555;
+    animation: slideInFooter 1s ease-in-out forwards;
+    opacity: 0;
+    position: absolute; /* Position absolutely relative to the body */
+    bottom: 10px; /* Stick it to the bottom */
+}
+
+@keyframes slideInFooter {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* New styles for points and lines */
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.line {
+    border-top: 2px solid blue;
+    position: absolute;
+    transform-origin: left top;
 }
