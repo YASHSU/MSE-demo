@@ -82,14 +82,14 @@ imageCanvas.addEventListener('click', (event) => {
         drawPoint(x, y);
         drawLine(pointA.x, pointA.y, pointB.x, pointB.y);
 
-        // Basic Frontend Calculation 
-        // const deltaX = pointB.x - pointA.x;
-        // const deltaY = pointB.y - pointA.y;
-        // const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-        // distanceDisplay.textContent = `Distance (pixels): ${distance.toFixed(2)}`;
+        // --- Basic Frontend Calculation ---
+        const deltaX = pointB.x - pointA.x;
+        const deltaY = pointB.y - pointA.y;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        distanceDisplay.textContent = `Distance (pixels): ${distance.toFixed(2)}`;
 
-        //  Send to Python Backend
-      
+        // --- Send to Python Backend ---
+        
         fetch('/calculate_distance', {
             method: 'POST',
             headers: {
@@ -105,6 +105,7 @@ imageCanvas.addEventListener('click', (event) => {
             console.error('Error sending data to backend:', error);
             distanceDisplay.textContent = 'Error calculating distance.';
         });
+
     }
 });
 
