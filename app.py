@@ -1,11 +1,9 @@
 from flask import Flask, request, jsonify
 import math
-from flask_cors import CORS  
-# For handling cross-origin requests
+from flask_cors import CORS  # For handling cross-origin requests
 
 app = Flask(__name__)
-CORS(app)  
-# Enable CORS for all routes (for development)
+CORS(app)  # Enable CORS for all routes (for development)
 
 def calculate_distance(point_a, point_b):
     return math.sqrt((point_b['x'] - point_a['x'])**2 + (point_b['y'] - point_a['y'])**2)
